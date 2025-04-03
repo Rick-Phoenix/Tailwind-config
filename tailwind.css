@@ -3,7 +3,7 @@
 
 @tailwind utilities;
 
-/* SECTION -- Root */
+/* Section -- Root */
 :root {
   /* Utopia Text */
   --step--2: clamp(0.6944rem, 0.6577rem + 0.1836vw, 0.8rem);
@@ -28,10 +28,10 @@
   --space-m-2xl: clamp(1.5rem, 0.2826rem + 6.087vw, 5rem);
 }
 
-/* SECTION -- Layer Base */
+/* Section -- Layer Base */
 
 @layer base {
-  /* SECTION -- Typography */
+  /* Section -- Typography */
 
   h1 {
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight;
@@ -57,7 +57,7 @@
     @apply mt-6 border-l-2 pl-6 italic;
   }
 
-  /* SECTION -- Component Defaults */
+  /* Section -- Component Defaults */
 
   table {
     thead {
@@ -89,10 +89,10 @@
   }
 }
 
-/* SECTION -- @theme */
+/* Section -- @theme */
 
 @theme {
-  /* SECTION -- Utopia Spacing */
+  /* Section -- Utopia Spacing */
 
   --spacing: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
   --spacing-1-4: var(--space-3xs-s);
@@ -106,7 +106,7 @@
   --spacing-5-8: var(--space-m-2xl);
   --spacing-largest: 77.5rem;
 
-  /* SECTION -- Utopia Text */
+  /* Section -- Utopia Text */
 
   --text-xs: var(--step--2);
   --text-sm: var(--step--1);
@@ -119,7 +119,7 @@
   --text-5xl: var(--step-6);
 }
 
-/* CATEGORY -- Utilities */
+/* Category -- Utilities */
 
 @utility scrollbar-hidden {
   &::-webkit-scrollbar {
@@ -130,7 +130,7 @@
   -ms-overflow-style: none; /* IE and Edge */
 }
 
-/* SECTION -- Flexbox */
+/* Section -- Flexbox */
 
 @utility flex-col {
   display: flex;
@@ -174,7 +174,7 @@
   align-items: center;
 }
 
-/* SECTION -- Translate */
+/* Section -- Translate */
 
 @utility translate-x-center {
   --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
@@ -194,7 +194,7 @@
   translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 
-/* SECTION -- Absolute */
+/* Section -- Absolute */
 
 @utility absolute-center {
   position: absolute;
@@ -219,7 +219,7 @@
   left: 50%;
 }
 
-/* SECTION -- Grid */
+/* Section -- Grid */
 
 @utility grid-quadrant {
   display: grid;
@@ -235,13 +235,19 @@
 @utility grid-cols-auto-fill-* {
   grid-template-columns: repeat(auto-fill, minmax(min(--value([ *]), 100%), 1fr));
   grid-template-columns: repeat(auto-fill, minmax(min(--value(--text- *), 100%), 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(min(var(--spacing) * --value(integer), 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--spacing) * --value(integer), 100%), 1fr)
+  );
 }
 
 @utility grid-cols-auto-fit-* {
   grid-template-columns: repeat(auto-fit, minmax(min(--value([ *]), 100%), 1fr));
   grid-template-columns: repeat(auto-fit, minmax(min(--value(--text- *), 100%), 1fr));
-  grid-template-columns: repeat(auto-fit, minmax(min(var(--spacing) * --value(integer), 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--spacing) * --value(integer), 100%), 1fr)
+  );
 }
 
-/* !CATEGORY */
+/* !Category */
